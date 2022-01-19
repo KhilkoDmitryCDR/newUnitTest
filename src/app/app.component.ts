@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UnitTest';
+  active:boolean=true;
+  sum(a:number,b:number):number{
+    return a+b;
+
+  }
 }

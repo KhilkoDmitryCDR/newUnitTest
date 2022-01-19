@@ -36,4 +36,25 @@ describe('AppComponent', () => {
     expect(myVar).toEqual('UnitTest');
 
   })
+  it ('la variable active siempre debe estar en true', ()=>{
+    let myVar:boolean =component.active;
+    expect(myVar).toBeTruthy();
+  })
+  it('el metodo sum() retorna la suma', ()=>{
+    let a:number=5;
+    let b:number=10;
+    let result:number=a+b;
+
+    expect (component.sum(a,b)).toBe(result);
+
+  })
+
+  it('debe existir un metodo llamado sum()' ,()=>{
+    let metodoLlamado=spyOn(component,'sum')
+
+    component.sum(3,3);
+
+    expect(metodoLlamado).toHaveBeenCalled();
+
+  })
 });
